@@ -19,9 +19,21 @@ npm run serve    # 표시된 주소 접속
 npm test         # Node 20 내장 test runner (node --test)
 ```
 
-## 배포
+## 배포 (라이브)
 
-GitHub Pages로 이 폴더를 서빙. 티스토리에는 배포 URL을 iframe으로 임베드.
+**플레이: https://david-myeonghan.github.io/idle-brick-breaker/**
+
+GitHub Pages(main 브랜치 root)로 서빙. `git push`하면 자동 갱신.
+
+## 티스토리 임베드
+
+HTML 편집 모드에서 아래를 삽입:
+
+```html
+<iframe src="https://david-myeonghan.github.io/idle-brick-breaker/"
+        width="400" height="600"
+        style="border:0;max-width:100%;aspect-ratio:2/3" loading="lazy"></iframe>
+```
 
 ## 문서
 
