@@ -1,18 +1,17 @@
 import { CONFIG, brickHP } from './config.js';
 
-export function makeBricks(stage, cols = 7, rows = 4) {
+export function makeBricks(stage, cols = CONFIG.cols, rows = CONFIG.rows) {
   const pad = 6;
-  const topMargin = 60;
+  const { topMargin, rowGap, brickH } = CONFIG;
   const w = (CONFIG.virtualW - pad * (cols + 1)) / cols;
-  const h = 22;
   const hp = brickHP(stage);
   const bricks = [];
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
       bricks.push({
         x: pad + c * (w + pad),
-        y: topMargin + r * (h + pad),
-        w, h, hp, maxHp: hp,
+        y: topMargin + r * (brickH + rowGap),
+        w, h: brickH, hp, maxHp: hp,
       });
     }
   }

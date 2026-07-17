@@ -15,6 +15,7 @@
 - 가상 해상도 400×600 (가로×세로 아님: width 400, height 600) 기준으로 모든 게임 좌표 계산.
 - 성장 상수: `baseHP = 10`, `growth = 1.15`, 스테이지 N 벽돌 HP = `round(baseHP * growth^N)` (N은 0부터).
 - 업그레이드 3종만: `ballCount`, `ballDamage`, `tapDamage`. 그 외 기능(프레스티지·오프라인 수익·결제) 금지(YAGNI).
+- 밸런스(헤드리스 시뮬레이션으로 실측 확정): 단일 공은 궤적이 주기적이라 벽돌 커버리지가 나빠 방치 진행이 0에 수렴 → 기본 공 3개(`startBalls`) + 기본 공 데미지 5(`baseBallDamage`). 값은 모두 `CONFIG`에 위치.
 - SaveData에 런타임 상태(`bricks`, `balls`) 저장 금지. `version:1`, `updatedAt` 필수.
 - 커밋은 각 태스크 내 명시된 파일만 `git add`.
 
