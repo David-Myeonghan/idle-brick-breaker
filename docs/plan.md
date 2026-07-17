@@ -429,8 +429,9 @@ test('bounceWalls reflects off bottom (idle: no loss)', () => {
 });
 
 test('collideBrick detects hit and reduces hp + reflects vy', () => {
+  // 공이 벽돌 아래(하단 y=120)에서 위로 올라와 바닥면에 충돌 → 아래로 반사(vy>0)
   const brick = { x: 100, y: 100, w: 40, h: 20, hp: 30, maxHp: 30 };
-  const ball = { x: 120, y: 98, vx: 0, vy: -50 };
+  const ball = { x: 120, y: 122, vx: 0, vy: -50 };
   const res = collideBrick(ball, brick, 10);
   assert.equal(res.hit, true);
   assert.equal(res.brickHp, 20);
